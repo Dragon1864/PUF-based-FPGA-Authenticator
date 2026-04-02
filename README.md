@@ -159,7 +159,7 @@ key = SHA256(response)
 Install dependencies:
 
 ```bash
-pip install numpy pandas
+pip install numpy pandas bchlib pynq
 ```
 
 ---
