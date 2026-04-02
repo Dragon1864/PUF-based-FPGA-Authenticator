@@ -67,7 +67,7 @@ Hash → Key
 Decrypt Firmware
      ↓
 Verification:
-    ✔ Match → AUTHENTIC DEVICE
+     Match → AUTHENTIC DEVICE
      Mismatch → REJECTED
 ```
 
