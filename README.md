@@ -83,11 +83,16 @@ Verification:
 │   └── firmware_encrypted.bin [This file is generated after python code is executed].
 │
 ├── verifier/
-│   ├── verifier.py [The verification python script is present here]
+│   └──  verifier.py [The verification python script is present here]
 │
-├── hardware/
-│   ├── hybrid_puf_8_8.bit [this is the bitstream file which will be genereated based on your design]
-│   └── design_files/
+├── design_files/
+│   ├── ROPUF/
+│   ├── PUF_secured_LED_blinking.v     [Top module]
+│   ├── blinking_led.v
+│   ├── pulse_on_change.v
+│   ├── RO_PUF_8_8.v
+│   ├── ro_puf_8_8_top.v
+│   └── RO_PUF_DRIVER_own.v
 │
 ├── data/
 │   └── crp_list_global_voting.csv
