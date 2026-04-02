@@ -77,16 +77,16 @@ Verification:
 
 ```text
 ├── manufacturer/
-│   ├── generate_crp_csv.py
-│   ├── manufacturer_enroll.py
-│   ├── device_data.json
-│   └── firmware_encrypted.bin
+│   ├── generate_crp_csv.py [This is to generate the csv file]
+│   ├── manufacturer_side.py [this python script uses the csv file and generates the device_data.json, firmware_encrypted.bin]
+│   ├── device_data.json [This file is generated after python code is executed]
+│   └── firmware_encrypted.bin [This file is generated after python code is executed].
 │
 ├── verifier/
-│   ├── verifier.py
+│   ├── verifier.py [The verification python script is present here]
 │
 ├── hardware/
-│   ├── hybrid_puf_8_8.bit
+│   ├── hybrid_puf_8_8.bit [this is the bitstream file which will be genereated based on your design]
 │   └── design_files/
 │
 ├── data/
