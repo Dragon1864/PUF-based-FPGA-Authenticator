@@ -12,9 +12,13 @@ overlay = Overlay("ro_puf_8_8.bit") # add your PUF bitstream files
 
 chal_axi = AxiGPIO(overlay.ip_dict['axi_gpio_0'])
 resp_axi = AxiGPIO(overlay.ip_dict['axi_gpio_1'])
+en_axi = AxiGPIO(overlay.ip_dict['axi_gpio_2'])
 
 chal_out = chal_axi.channel1
 resp_in  = resp_axi.channel1
+en_out  = en_axi.channel1
+
+en_out.write(0,0x01)        # Initialy the Blinking LEDs are OFF.
 
 # -------------------------------
 # 2. Load stored data
@@ -102,5 +106,7 @@ decrypted = xor_decrypt(encrypted, key)
 # -------------------------------
 if decrypted == expected_firmware:
     print("\nDEVICE VERIFIED SUCCESSFULLY")
+    en_out.write(1,0x01)            # Make the LED blink only if it is the authentic device
 else:
     print("\nDECRYPTION FAILED")
+    en_out.write(0,0x01)
