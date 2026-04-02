@@ -54,7 +54,7 @@ print("\nFinal Response:", list(data))
 # -------------------------------
 # 4. BCH setup (FIXED)
 # -------------------------------
-bch = bchlib.BCH(4, m=8)   # IMPORTANT: strong enough 4 bit error correction
+bch = bchlib.BCH(4, m=8)   #strong enough 4 bit error correction
 
 ecc = bch.encode(data)
 
@@ -86,10 +86,10 @@ device_data = {
     "ecc": list(ecc)
 }
 
-with open("device_data.json", "w") as f: #writing the data file
+with open("device_data.json", "w") as f: #device_data.json stores the PUF-based identity data for device authentication.
     json.dump(device_data, f)
 
-with open("firmware_encrypted.bin", "wb") as f: #writing the encrypted firmware
+with open("firmware_encrypted.bin", "wb") as f: #writing the encrypted firmware.
     f.write(encrypted)
 
 # -------------------------------
