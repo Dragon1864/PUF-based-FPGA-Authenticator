@@ -124,7 +124,7 @@ Verification:
 ### 2. Temporal Majority Voting
 
 * Each bit is stabilized using repeated measurements
-* Improves reliability (~89%)
+* Improves reliability (~90%)
 
 ### 3. CRP Selection
 
@@ -182,10 +182,11 @@ Outputs:
 
 ---
 
+### Open Jupyter notebook on PYNQ board and upload device_data.json, firmware_encrypted.bin, verifier_side.py, your_bitstream.bit files.
 ###  Verifier (Authentication)
 
 ```bash
-python verifier.py
+python verifier_side.py
 ```
 
 ---
