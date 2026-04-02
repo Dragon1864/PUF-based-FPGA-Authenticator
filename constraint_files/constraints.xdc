@@ -5,7 +5,7 @@ set_property -dict { PACKAGE_PIN N16   IOSTANDARD LVCMOS33 } [get_ports { LED[2]
 set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { LED[3] }]; # LED3
 
 # To ignore combinational loop
-
+# Modify "NAME_OF_YOUR_BLOCK_DESIGN_i" to <Name of your block design>_i
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [NAME_OF_YOUR_BLOCK_DESIGN_i/PUF_secured_LED_blin_0/inst/a0/h0/ro0/r0_0/c0/w7]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [NAME_OF_YOUR_BLOCK_DESIGN_i/PUF_secured_LED_blin_0/inst/a0/h0/ro0/r1_0/c0/w7]
 set_property ALLOW_COMBINATORIAL_LOOPS TRUE [NAME_OF_YOUR_BLOCK_DESIGN_i/PUF_secured_LED_blin_0/inst/a0/h0/ro0/r2_0/c0/w7]
