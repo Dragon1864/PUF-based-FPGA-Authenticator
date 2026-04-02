@@ -116,38 +116,43 @@ Verification:
 
 ## Methodology
 
-### 1. CRP Collection
+### 1. Bitstream Generation and GPIO-Based PUF Interface
+
+* The bitstream is generated and the inputs to the PUF are given using GPIO pins
+* In Vivado, AXI GPIO is used to provide the input and receive the output
+
+### 2. CRP Collection
 
 * Multiple PUF responses are collected
 * Stored in CSV format
 
-### 2. Temporal Majority Voting
+### 3. Temporal Majority Voting
 
 * Each bit is stabilized using repeated measurements
-* Improves reliability (~90%)
+* Improves reliability (~89%)
 
-### 3. CRP Selection
+### 4. CRP Selection
 
 * Balanced responses preferred
 * Improves entropy
 
-### 4. Error Correction (BCH)
+### 5. Error Correction (BCH)
 
 * BCH encoding generates helper data (ECC)
 * BCH decoding corrects noisy runtime responses
 * Ensures stable key reconstruction
 
-### 5. Key Generation
+### 6. Key Generation
 
 ```python
 key = SHA256(response)
 ```
 
-### 6. Encryption
+### 7. Encryption
 
 * Firmware encrypted using XOR with derived key
 
-### 7. Verification
+### 8. Verification
 
 * Same process repeated
 * Decrypted firmware compared with original
