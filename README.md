@@ -1,6 +1,6 @@
-# 🔐 FPGA-Based RO-PUF Authentication System
+#  FPGA-Based RO-PUF Authentication System
 
-## 📌 Overview
+##  Overview
 
 This project implements a **Ring Oscillator Physical Unclonable Function (RO-PUF)** on an FPGA to enable **hardware-based device authentication** and **secure firmware encryption**.
 
@@ -8,7 +8,7 @@ The system leverages inherent manufacturing variations to generate **unique, unc
 
 ---
 
-## 🧠 Concept
+##  Concept
 
 A **PUF (Physical Unclonable Function)** produces a device-unique response for a given challenge due to microscopic variations in hardware.
 
@@ -20,9 +20,9 @@ These responses are:
 
 ---
 
-## ⚙️ System Architecture
+##  System Architecture
 
-### 🏭 Manufacturer Side (Enrollment Phase)
+###  Manufacturer Side (Enrollment Phase)
 
 ```text
 FPGA (RO-PUF)
@@ -49,7 +49,7 @@ Store:
 
 ---
 
-### 🔍 Verifier Side (Authentication Phase)
+###  Verifier Side (Authentication Phase)
 
 ```text
 FPGA (RO-PUF)
@@ -68,12 +68,12 @@ Decrypt Firmware
      ↓
 Verification:
     ✔ Match → AUTHENTIC DEVICE
-    ❌ Mismatch → REJECTED
+     Mismatch → REJECTED
 ```
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 ├── manufacturer/
@@ -102,19 +102,19 @@ Verification:
 
 ---
 
-## 🔑 Key Features
+##  Key Features
 
-* 🔐 Hardware-rooted security using RO-PUF
-* 📊 Temporal Majority Voting for stabilization
-* 🔁 CRP selection for entropy optimization
-* 🛠 BCH Error Correction (Fuzzy Extractor concept)
-* 🔑 SHA-256 based key derivation
-* 📦 Firmware encryption & secure verification
-* ⚡ Implemented on PYNQ-Z2 FPGA
+*  Hardware-rooted security using RO-PUF
+*  Temporal Majority Voting for stabilization
+*  CRP selection for entropy optimization
+*  BCH Error Correction (Fuzzy Extractor concept)
+*  SHA-256 based key derivation
+*  Firmware encryption & secure verification
+*  Implemented on PYNQ-Z2 FPGA
 
 ---
 
-## 🧪 Methodology
+## Methodology
 
 ### 1. CRP Collection
 
@@ -154,7 +154,7 @@ key = SHA256(response)
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -169,7 +169,7 @@ pip install numpy pandas bchlib pynq
 
 ---
 
-### 🏭 Manufacturer (Enrollment)
+###  Manufacturer (Enrollment)
 
 ```bash
 python manufacturer_enroll.py
@@ -182,7 +182,7 @@ Outputs:
 
 ---
 
-### 🔍 Verifier (Authentication)
+###  Verifier (Authentication)
 
 ```bash
 python verifier.py
@@ -190,24 +190,24 @@ python verifier.py
 
 ---
 
-## ⚠️ Important Notes
+##  Important Notes
 
-* ⚡ Enrollment and verification must use:
+*  Enrollment and verification must use:
 
   * Same challenges
   * Same voting method
   * Same timing
 
-* 📉 PUF responses are noisy:
+*  PUF responses are noisy:
 
   * Majority voting required
   * BCH required for correction
 
-* 🔁 Changes in environment (voltage/temp) may affect results
+*  Changes in environment (voltage/temp) may affect results
 
 ---
 
-## 📊 Limitations
+##  Limitations
 
 * Limited entropy (8-bit base PUF)
 * Environmental sensitivity
@@ -215,7 +215,7 @@ python verifier.py
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 * 32-bit / 64-bit PUF expansion
 * Optimized BCH parameters
@@ -224,7 +224,7 @@ python verifier.py
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 
 ```text
 Hardware Uniqueness → Error Correction → Key → Secure Authentication
