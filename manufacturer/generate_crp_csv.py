@@ -4,26 +4,21 @@ import time
 import csv
 
 # 1. Load and program the FPGA
-overlay = Overlay("YOUR_BITSTREAM_FILE.bit", gen_cache=False)   #Add your bitstream file name here.
+overlay = Overlay("YOUR_BITSTREAM_FILE.bit")   #Add your bitstream file name here.
 overlay.download()
 
 # 2. Hook up GPIO
 chal_axi = overlay.axi_gpio_0
 resp_axi = overlay.axi_gpio_1
-en_axi   = overlay.axi_gpio_2
 
 chal_out = chal_axi.channel1
 resp_in  = resp_axi.channel1
-en_out   = en_axi.channel1
 
 def send_challenge(challenge_val: int) -> int:
     chal_out.write(challenge_val, 0xFF)
     time.sleep(0.005)
     return resp_in.read()
 
-# Disable blinking LED (no need while generating the CSV file from the manufacturer side)
-# If needed make it 1 to verify blinking LED.
-en_out.write(0, 0x1)
 
 # 3. Multiple sweeps (for MAJORITY VOTING) 
 num_sweeps = 7  # You may change this to any odd value of your preference
