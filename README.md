@@ -76,12 +76,6 @@ Verification:
 ##  Project Structure
 
 ```text
-├── verifier/
-│   └──  verifier.py [The verification python script is present here]
-│ 
-├── constraint_files/
-│   └──  constraints.xdc [Forces Vivado to ignore the combinational loop present in the Ring Oscillators]
-│ 
 ├── design_files/
 │   ├── ROPUF/
 │   ├── ro_puf_8_8_top.v		[Top module]	
@@ -89,6 +83,9 @@ Verification:
 │   ├── pulse_on_change.v
 │   └── RO_PUF_DRIVER_own.v
 │ 
+├── constraint_files/
+│   └──  constraints.xdc [Forces Vivado to ignore the combinational loop present in the Ring Oscillators]
+│
 ├── manufacturer/
 │   ├── generate_crp_csv.py [This is to generate the csv file]
 │   ├── manufacturer_side.py [this python script uses the csv file and generates the device_data.json, firmware_encrypted.bin]
