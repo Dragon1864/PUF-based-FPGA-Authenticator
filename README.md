@@ -87,15 +87,10 @@ Verification:
 │
 ├── design_files/
 │   ├── ROPUF/
-│   ├── PUF_secured_LED_blinking.v     [Top module]
-│   ├── blinking_led.v
-│   ├── pulse_on_change.v
+│   ├── ro_puf_8_8_top.v		[Top module]	
 │   ├── RO_PUF_8_8.v
-│   ├── ro_puf_8_8_top.v
+│   ├── pulse_on_change.v
 │   └── RO_PUF_DRIVER_own.v
-│
-├── data/
-│   └── crp_list_global_voting.csv
 │
 └── README.md
 ```
