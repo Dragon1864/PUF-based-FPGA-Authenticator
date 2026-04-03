@@ -1,4 +1,4 @@
-#  FPGA-Based RO-PUF Authentication System
+##  FPGA-Based RO-PUF Authentication System
 
 ##  Overview
 
