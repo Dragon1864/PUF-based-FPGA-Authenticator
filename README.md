@@ -106,7 +106,7 @@ Verification:
 *  Temporal Majority Voting for stabilization
 *  CRP selection for entropy optimization
 *  BCH Error Correction (Fuzzy Extractor concept)
-*  SHA-256 based key derivation
+*  SHA-256-based key derivation
 *  Firmware encryption & secure verification
 *  Implemented on PYNQ-Z2 FPGA
 
@@ -116,7 +116,7 @@ Verification:
 
 ### 1. Bitstream Generation and GPIO-Based PUF Interface
 
-* The bitstream is generated and the inputs to the PUF are given using GPIO pins
+* The bitstream is generated, and the inputs to the PUF are given using the GPIO pins
 * In Vivado, AXI GPIO is used to provide the input and receive the output
 
 ### 2. CRP Collection
@@ -153,7 +153,7 @@ key = SHA256(response)
 ### 8. Verification
 
 * Same process repeated
-* Decrypted firmware compared with original
+* Decrypted firmware compared with the original
 
 ---
 
